@@ -1,0 +1,28 @@
+<div class="container">
+    <h3>APPOINTMENTS</h3>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Date</th>
+            <th scope="col">Room # </th>
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @appointments.each do |appointment|%>
+            <tr>
+            <th scope="row"><%= appointment.id%></th>
+            <td><%= appointment.date%></td>
+            <td><%= appointment.room_no%></td>
+            <td><%= appointment.doctor.name%></td>
+            <td><%= appointment.patient.name%></td>
+            <td><%= link_to 'Edit', edit_appointment_path(appointment), class: 'btn btn-primary'%></td>
+            <td><%= button_to 'Delete',  appointment , method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

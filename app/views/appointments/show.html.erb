@@ -1,16 +1,18 @@
 <div class="container">
-    <h3>PATIENT DETAILS</h3>
+    <h3>DOCTOR DETAILS</h3>
     <table class="table">
         <thead>
             <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
+            <th scope="col">Specialization</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-            <th scope="row"><%= @patient.id%></th>
-            <td><%= @patient.name%></td>
+            <th scope="row"><%= @doctor.id%></th>
+            <td><%= @doctor.name%></td>
+            <td><%= @doctor.specialization%></td>
             </tr>
         </tbody>
     </table>

@@ -1,0 +1,15 @@
+
+<%= simple_form_for @appointment do |f|%>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <%= f.input :date, as: :date%>
+    <%= f.input :room_no%>
+    <%= f.association :doctor, include_blank: false%>
+    <%= f.association :patient, include_blank: false%>
+    <h3> ADD Doctor</h3>
+   
+    <br>
+    <%= f.button :submit, class: 'btn btn-primary'%>
+</div>
+<% end %>
