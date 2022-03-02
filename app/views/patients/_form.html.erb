@@ -2,8 +2,13 @@
 <%= simple_form_for @patient do |f|%>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
     <%= f.input :name%><br>
+        <%= f.fields_for :appointments do |appointment|%>
+            <%= appointment.input :date%>
+            <%= appointment.input :room_no%>
+            <%= appointment.input :patient_id, :value=> f.id%>
+            <%= appointment.input :doctor_id, :collection => Doctor.all, :label_method => :name,:value_method => :id,:label => "Doctor" ,:include_blank => false %>
+        <% end %>
     <%= f.button :submit, class: 'btn btn-primary'%>
 </div>
 <% end %>

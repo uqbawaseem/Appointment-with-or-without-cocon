@@ -13,6 +13,8 @@ class PatientsController < ApplicationController
        
    def new
     @patient = Patient.new
+    @patient.appointments.build
+
   end
 
 
@@ -54,6 +56,6 @@ class PatientsController < ApplicationController
       @patient = Patient.find(params[:id])
     end
     def patient_params 
-    params.require(:patient).permit(:name)
+    params.require(:patient).permit(:name, appointments_attributes: [:id, :date, :room_no, :doctor_id, :patient_id])
     end
 end
