@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>DOCTORS</h3>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Specialization</th>
+             <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @doctors.each do |doctor|%>
+            <tr>
+            <th scope="row"><%= doctor.id%></th>
+            <td><%= doctor.name%></td>
+            <td><%= doctor.specialization%></td>
+            <td><%= link_to 'Edit', edit_doctor_path(doctor), class: 'btn btn-primary'%></td>
+            <td><%= button_to 'Delete',  doctor , method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
