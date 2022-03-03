@@ -4,13 +4,21 @@
         <thead>
             <tr>
             <th scope="col">Id</th>
-            <th scope="col">Name</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Appointment Date</th>
+            <th scope="col">Appointment Room</th>
+            <th scope="col">Doctor</th>
             </tr>
         </thead>
         <tbody>
             <tr>
             <th scope="row"><%= @patient.id%></th>
             <td><%= @patient.name%></td>
+            <% @patient_appointments.each do |appointment|%>
+            <td><%= appointment.date%></td>
+            <td><%= appointment.room_no%></td>
+            <td><%= appointment.doctor.name%></td>
+            <% end %>
             </tr>
         </tbody>
     </table>

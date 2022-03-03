@@ -8,7 +8,7 @@
             <th scope="col">Room # </th>
             <th scope="col">Doctor Name</th>
             <th scope="col">Patient Name</th>
-            <th scope="col">Actions</th>
+            <th scope="col" class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +19,8 @@
             <td><%= appointment.room_no%></td>
             <td><%= appointment.doctor.name%></td>
             <td><%= appointment.patient.name%></td>
-            <td><%= link_to 'Edit', edit_appointment_path(appointment), class: 'btn btn-primary'%></td>
-            <td><%= button_to 'Delete',  appointment , method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %></td>
+            <td class="text-center"><%= link_to 'Edit', edit_appointment_path(appointment), class: 'btn btn-outline-info'%></td>
+            <td><%= button_to 'Delete',  appointment , method: :delete, class: "btn btn-outline-danger",data: {confirm: "Are you sure?"} %></td>
             </tr>
             <% end %>
         </tbody>

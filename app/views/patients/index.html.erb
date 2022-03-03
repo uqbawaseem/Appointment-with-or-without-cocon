@@ -5,7 +5,7 @@
             <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
-             <th scope="col">Actions</th>
+             <th class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -13,8 +13,9 @@
             <tr>
             <th scope="row"><%= patient.id%></th>
             <td><%= patient.name%></td>
-            <td><%= link_to 'Edit', edit_patient_path(patient), class: 'btn btn-primary'%></td>
-            <td><%= button_to 'Delete',  patient , method: :delete, class: "btn btn-primary",data: {confirm: "Are you sure?"} %></td>
+            <td class="text-center"><%= link_to 'Edit', edit_patient_path(patient), class: 'btn btn-outline-info'%></td>
+            <td class="text-center"><%= link_to 'Details', patient_path(patient), class: 'btn btn-outline-success'%></td>
+            <td><%= button_to 'Delete',  patient , method: :delete, class: "btn btn-outline-danger",data: {confirm: "Are you sure?"} %></td>
             </tr>
             <% end %>
         </tbody>

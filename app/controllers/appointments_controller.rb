@@ -1,19 +1,18 @@
 class AppointmentsController < ApplicationController
   before_action :appointment_find, only:[:show, :edit, :update, :destroy]
+
   def index
     @appointments = Appointment.all
   end
  
-
   def show
     appointment_find
   end
 
-       
+     
    def new
     @appointment = Appointment.new
   end
-
 
   def create
     @appointment = Appointment.new(appointment_params)
@@ -24,11 +23,9 @@ class AppointmentsController < ApplicationController
       end
   end
 
-
   def edit
     appointment_find
   end
-
 
   def update
     appointment_find
@@ -39,7 +36,6 @@ class AppointmentsController < ApplicationController
       end
   end
 
-
   def destroy
     appointment_find
     if @appointment.destroy
@@ -47,8 +43,7 @@ class AppointmentsController < ApplicationController
     end
   end
   
-
-    private 
+   private 
     def appointment_find
       @appointment = Appointment.find(params[:id])
     end

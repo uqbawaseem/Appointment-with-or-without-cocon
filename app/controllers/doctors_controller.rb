@@ -1,15 +1,14 @@
 class DoctorsController < ApplicationController
   before_action :doctor_find, only:[:show, :edit, :update, :destroy]
+  
   def index
     @doctors = Doctor.all
   end
  
-
   def show
     doctor_find
   end
 
-       
    def new
     @doctor = Doctor.new
   end
@@ -20,25 +19,22 @@ class DoctorsController < ApplicationController
       if @doctor.save
         redirect_to doctors_path
       else
-        render :'new'
+        render 'new'
       end
   end
-
 
   def edit
     doctor_find
   end
-
 
   def update
     doctor_find
       if @doctor.update(doctor_params)
         redirect_to doctors_path
       else
-        render :'edit'
+        render 'edit'
       end
   end
-
 
   def destroy
     doctor_find
@@ -47,7 +43,6 @@ class DoctorsController < ApplicationController
     end
   end
   
-
     private 
     def doctor_find
       @doctor = Doctor.find(params[:id])

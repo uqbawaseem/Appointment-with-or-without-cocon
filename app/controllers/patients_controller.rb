@@ -4,44 +4,41 @@ class PatientsController < ApplicationController
   def index
     @patients = Patient.all
   end
- 
 
   def show
     patient_find
+    @patient_appointments = @patient.appointments.all
+    
   end
 
-       
    def new
     @patient = Patient.new
     @patient.appointments.build
 
   end
 
-
   def create
     @patient = Patient.new(patient_params)
       if @patient.save
+        @patient_appointments = @patient.appointments.all
         redirect_to patients_path
       else
-        render :'new'
+        render 'new'
       end
   end
-
 
   def edit
     patient_find
   end
-
 
   def update
     patient_find
       if @patient.update(patient_params)
         redirect_to patients_path
       else
-        render :'edit'
+        render 'edit'
       end
   end
-
 
   def destroy
     patient_find
@@ -50,7 +47,6 @@ class PatientsController < ApplicationController
     end
   end
   
-
     private 
     def patient_find
       @patient = Patient.find(params[:id])

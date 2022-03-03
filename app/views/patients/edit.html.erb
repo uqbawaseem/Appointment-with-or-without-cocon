@@ -1,6 +1,23 @@
 <div class="container">
     <div class="container">
         <h3>EDIT PATIENT</h3>
-        <%= render "form" %>
+        <%= simple_form_for @patient, html: {'data-turbo' => "false"} do |f|%>
+
+        <%= f.error_notification %>
+    
+        <%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %>
+        <h4>Patient</h4>
+        <%= f.input :name%><br>
+            <h4>APPOINTMENT</h4>
+            <%= f.fields_for :appointments do |appointment|%>
+
+                <%= appointment.input :date%>
+                <%= appointment.input :room_no%>
+                <%= appointment.input :patient_id, as: :hidden,:value=> f.id%>
+                <%= appointment.input :doctor_id, :collection => Doctor.all, :label_method => :name,:value_method => :id,:label => "Doctor" ,:include_blank => false, prompt: 'Select Doctor' %>
+                <br>
+            <% end %>
+        <%= f.button :submit, class: 'btn btn-primary'%>
+<% end %>
     </div>
 </div>
