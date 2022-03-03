@@ -6,7 +6,7 @@
 
     <%= f.input :date, as: :date%>
     <%= f.input :room_no%>
-    <%= f.association :doctor, include_blank: false, prompt: 'Select doctor'%>
+    <%= f.association :doctor, as: :check_boxes,include_blank: false, prompt: 'Select doctor'%>
     <%= f.association :patient, include_blank: false, prompt: 'Select patient'%>
     <h3> ADD Doctor</h3>
    

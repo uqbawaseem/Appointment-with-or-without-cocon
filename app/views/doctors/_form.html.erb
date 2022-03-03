@@ -5,5 +5,11 @@
 
     <%= f.input :name%>
     <%= f.input :specialization%><br>
+
+    <h4>APPOINTMENT</h4>
+    <%= f.simple_fields_for :appointments do |appointment|%>
+    <%= render 'appointment_fields', appointment: appointment, f: f %>
+    <% end %>
+    <%= link_to_add_appointments "ADD ANOTHER APPOINTMENT", f :appointments%>
     <%= f.button :submit, class: 'btn btn-primary'%>
 <% end %>

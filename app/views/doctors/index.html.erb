@@ -16,6 +16,7 @@
             <td><%= doctor.name%></td>
             <td><%= doctor.specialization%></td>
             <td class="text-center"><%= link_to 'Edit', edit_doctor_path(doctor), class: 'btn btn-outline-info'%></td>
+            <td class="text-center"><%= link_to 'Details', doctor_path(doctor), class: 'btn btn-outline-success'%></td>
             <td><%= button_to 'Delete',  doctor , method: :delete, class: "btn btn-outline-danger",data: {confirm: "Are you sure?"} %></td>
             </tr>
             <% end %>

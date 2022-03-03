@@ -1,0 +1,5 @@
+    <%= appointment.input :date%>
+    <%= appointment.input :room_no%>
+    <%= appointment.input :patient_id, as: :hidden,:value=> f.id%>
+    <%= appointment.input :doctor_id, :collection => Doctor.all, :label_method => :name,:value_method => :id,:label => "Doctor" ,:include_blank => false, prompt: 'Select Doctor' %>
+    <br>
