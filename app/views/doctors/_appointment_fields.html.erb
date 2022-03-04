@@ -1,5 +1,11 @@
-    <%= appointment.input :date%>
-    <%= appointment.input :room_no%>
-    <%= appointment.input :patient_id, as: :hidden,:value=> f.id%>
-    <%= appointment.input :doctor_id, :collection => Doctor.all, :label_method => :name,:value_method => :id,:label => "Doctor" ,:include_blank => false, prompt: 'Select Doctor' %>
-    <br>
+<fieldset>
+<%= appointment.input :date%>
+<%= appointment.input :room_no%>
+<%= appointment.hidden_field :_destroy%>
+
+<%= appointment.input :patient_id, :collection => Patient.all, :label_method => :name,:value_method => :id,:label => "Patient" ,:include_blank => false, prompt: 'Select Patient' %>
+<br>
+<%= link_to "Click To Remove", "", class: "remove-appointments btn btn-outline-danger btn-sm float-end"%> <br>
+<br>
+
+</fieldset>

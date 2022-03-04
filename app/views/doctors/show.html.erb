@@ -6,9 +6,7 @@
             <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Specialization</th>
-            <th scope="col">Appointment Date</th>
-            <th scope="col">Appointment Room</th>
-            <th scope="col">Patient Name</th>
+
             </tr>
         </thead>
         <tbody>
@@ -16,12 +14,34 @@
             <th scope="row"><%= @doctor.id%></th>
             <td><%= @doctor.name%></td>
             <td><%= @doctor.specialization%></td>
-            <% @doctor_appointments.each do |appointment|%>
-            <td><%= appointment.date%></td>
-            <td><%= appointment.room_no%></td>
-            <td><%= appointment.patient.name%></td>
-            <% end %>
             </tr>
         </tbody>
     </table>
+    <br>
+    <h3>APPOINTMENT DETAILS</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <% @doctor_appointments.each do |appointment|%>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Appointment</h5>
+                <p class="card-text">Appointment date: <strong> <%=appointment.date%> </strong></p>
+                <p class="card-text">Appointment Room No: <strong> <%=appointment.room_no%> </strong></p>
+                </div>
+            </div><hr>
+            <% end %> 
+        </div>
+        <div class="col-md-6">
+            <% @patient_name.each do |patient|%>
+            <div class="card mb-3" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Patient</h5>
+                <p class="card-text">Patient Name: <strong> <%=patient.name%> </strong></p>
+                </div>
+            </div><br><hr>
+            <% end %> 
+        </div>
+    </div>
+
+     
 </div>

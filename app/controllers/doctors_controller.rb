@@ -8,6 +8,7 @@ class DoctorsController < ApplicationController
   def show
     doctor_find
     @doctor_appointments = @doctor.appointments.all
+    @patient_name = @doctor.patients.all
   end
 
    def new
@@ -50,6 +51,6 @@ class DoctorsController < ApplicationController
       @doctor = Doctor.find(params[:id])
     end
     def doctor_params 
-    params.require(:doctor).permit(:id, :name, :specialization, appointments_attributes: [:id, :date, :room_no, :doctor_id, :patient_id])
+    params.require(:doctor).permit(:id, :name, :specialization, appointments_attributes: [:id, :date, :room_no, :doctor_id, :patient_id, :_destroy])
     end
 end

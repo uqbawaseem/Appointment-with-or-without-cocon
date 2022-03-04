@@ -6,7 +6,6 @@ module ApplicationHelper
         appointments = appointment.fields_for(association, new_object, child_index: id) do |build|
             render( 'appointment_fields', appointment: build)
         end
-        link_to(name, "#", class: 'add_appointments btn btn-outline-success btn-sm float-end', data: {id: id, appointments: appointments.gsub("\n", "")})
+        link_to(name, "", class: 'add_appointments btn btn-outline-success btn-sm float-end', data: {id: id, appointments: appointments.gsub("\n", "")})
     end
-
 end
