@@ -5,7 +5,6 @@
   <%= f.input :name%>
   <%= f.input :specialization%><br>
   <div class="place_to_add">
-    <h4>APPOINTMENT</h4>  
     <%= f.simple_fields_for :appointments do |appointment|%>
         <%= render 'appointment_fields', {:appointment=> appointment, :f=> f}%>
 
