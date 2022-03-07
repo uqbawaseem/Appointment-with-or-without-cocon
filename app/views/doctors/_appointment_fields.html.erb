@@ -1,11 +1,9 @@
-<fieldset>
+<fieldset class="appointment">
 <%= appointment.input :date%>
 <%= appointment.input :room_no%>
-<%= appointment.hidden_field :_destroy%>
 
 <%= appointment.input :patient_id, :collection => Patient.all, :label_method => :name,:value_method => :id,:label => "Patient" ,:include_blank => false, prompt: 'Select Patient' %>
 <br>
-<%= link_to "Click To Remove", "", class: "remove-appointments btn btn-outline-danger btn-sm float-end"%> <br>
+<%= link_to_remove_association "click to remove", appointment, class: "btn btn-outline-danger btn-sm float-end", wrapper_class: 'appointment'%>
 <br>
-
 </fieldset>

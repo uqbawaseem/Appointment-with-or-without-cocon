@@ -3,9 +3,11 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require cocoon
 import "@hotwired/turbo-rails"
 import "controllers"
 import "bootstrap"
+
 
 
 
