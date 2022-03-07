@@ -11,7 +11,7 @@
 
     <% end %>
   </div>
-    <%= link_to_add_association "Add Appointment", f, :appointments, form_name: 'appointment', class: "btn btn-outline-success btn-sm float-end", data: {association_insertion_method: "append", association_insertion_node: ".place_to_add"}%>
+    <br><%= link_to_add_association "Add Appointment", f, :appointments, form_name: 'appointment', class: "btn btn-outline-success btn-sm float-end", data: {association_insertion_method: "append", association_insertion_node: ".place_to_add"}%>
 
   <div class= "btn">
   <%= f.button :submit, class: 'btn btn-primary'%>
