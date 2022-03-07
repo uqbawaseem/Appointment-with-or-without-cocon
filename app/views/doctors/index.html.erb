@@ -15,9 +15,18 @@
             <th scope="row"><%= doctor.id%></th>
             <td><%= doctor.name%></td>
             <td><%= doctor.specialization%></td>
-            <td class="text-center"><%= link_to 'Edit', edit_doctor_path(doctor), class: 'btn btn-outline-info'%></td>
-            <td class="text-center"><%= link_to 'Details', doctor_path(doctor), class: 'btn btn-outline-success'%></td>
-            <td><%= button_to 'Delete',  doctor , method: :delete, class: "btn btn-outline-danger",data: {confirm: "Are you sure?"} %></td>
+            <td class="text-center">
+                <div class="dropdown">
+                <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Action
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li class="btn btn-outline-secondary btn-sm"><%= link_to 'Edit', edit_doctor_path(doctor), class: 'dropdown-item'%></li>
+                    <li class="btn btn-outline-info btn-sm"><%= link_to 'Details', doctor_path(doctor), class: 'dropdown-item '%></li>
+                    <li class="btn btn-outline-danger btn-sm"><%= button_to 'Delete',  doctor , method: :delete, class: "dropdown-item",data: {confirm: "Are you sure?"} %></li>
+                </ul>
+                </div>
+            </td>
             </tr>
             <% end %>
         </tbody>
