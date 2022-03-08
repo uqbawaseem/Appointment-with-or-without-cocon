@@ -9,11 +9,9 @@ import "controllers"
 import "bootstrap"
 
 
-
-
-
 import Rails from "@rails/ujs";
 Rails.start();
+
 
 $('form').on('click', '.remove-appointments', function(event){
     console.log('remove'); 

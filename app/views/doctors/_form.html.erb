@@ -1,7 +1,7 @@
 <%= simple_form_for @doctor, html: {'data-turbo' => "false"} do |f|%>
   <%= f.error_notification %>
   <%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %>
-  <h4>Doctor</h4>
+  <!-- doctor-->
   <%= f.input :name%>
   <%= f.input :specialization%><br>
   <div class="place_to_add">
@@ -10,7 +10,7 @@
 
     <% end %>
   </div>
-    <br><%= link_to_add_association "Add Appointment", f, :appointments, form_name: 'appointment', class: "btn btn-outline-success btn-sm float-end", data: {association_insertion_method: "append", association_insertion_node: ".place_to_add"}%>
+    <br><%= link_to_add_association "Add Appointment", f, :appointments, form_name: 'appointment', class: "btn btn-outline-success btn-sm float-end js", data: {association_insertion_method: "append", association_insertion_node: ".place_to_add"}%>
 
   <div class= "btn">
   <%= f.button :submit, class: 'btn btn-primary'%>

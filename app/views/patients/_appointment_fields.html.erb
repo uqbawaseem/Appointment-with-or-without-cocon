@@ -1,8 +1,8 @@
-<fieldset>
+<fieldset class="appointment border border-dark p-4">
+<h4>APPOINTMENT</h4>  
 <%= appointment.input :date%>
 <%= appointment.input :room_no%>
 <%= appointment.hidden_field :_destroy%>
-
 <%= appointment.input :doctor_id, :collection => Doctor.all, :label_method => :name,:value_method => :id,:label => "Doctor" ,:include_blank => false, prompt: 'Select Doctor' %>
 <br>
 <%= link_to "Click To Remove", "", class: "remove-appointments btn btn-outline-danger btn-sm float-end"%> <br>

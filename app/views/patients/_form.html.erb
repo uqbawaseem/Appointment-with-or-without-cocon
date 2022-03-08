@@ -3,9 +3,8 @@
     <%= f.error_notification %>
    
     <%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %>
-    <h4>Patient</h4>
-    <%= f.input :name%><br>
-        <h4>APPOINTMENT</h4>
+    <!-- patient-->
+      <%= f.input :name%><br>
         <%= f.simple_fields_for :appointments do |appointment|%>
         <%= render 'appointment_fields', {:appointment=> appointment, :f=> f}%>
         <br><br>
